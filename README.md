@@ -8,6 +8,13 @@ This sample use Foursquare's Location(Venue) API to show the recommeded place ar
 <li> ViewModels</li>
 <li> LiveData</li>
 </ol>
+
+<b>android libraries</b>
+<ol>
+<li>Android Support Library</li>
+<li>Android Architecture Components</li>
+<li>Android Data Binding</li>
+</ol>
 <b>3rd Party libraries</b>
   <ol>
 <li>Retrofit</li>
