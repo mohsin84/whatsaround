@@ -14,4 +14,7 @@ This sample use Foursquare's Location(Venue) API to show the recommeded place ar
 <li>Picasso </li>
 </ol>
 Coding architecture/ Design Pattern:
-  -MVVM (Model View ViewModel)
+ <ol>
+<li>MVVM (Model View ViewModel)</li>
+</ol>
+  
