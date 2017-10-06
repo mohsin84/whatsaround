@@ -25,3 +25,4 @@ Coding architecture/ Design Pattern:
 <li>MVVM (Model View ViewModel)</li>
 </ol>
   
+Still testing the code. Stay tune for update!
