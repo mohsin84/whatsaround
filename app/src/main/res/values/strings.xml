@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Whats Around</string>
+    <string name="retry">Retry</string>
+    <string name="search_hint">quick search</string>
+    <string name="unknown_error">Unknown Error</string>
+    <string name="repo_full_name"><b>%s</b>/%s</string>
+    <string name="empty_search_result">No results for <b>%s</b></string>
+</resources>
