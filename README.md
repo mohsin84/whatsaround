@@ -11,9 +11,10 @@ This sample use Foursquare's Location(Venue) API to show the recommeded place ar
 
 <b>android libraries</b>
 <ol>
-<li>Android Support Library</li>
 <li>Android Architecture Components</li>
+<li> Dagger 2<li>  
 <li>Android Data Binding</li>
+<li>Android Support Library</li>
 </ol>
 <b>3rd Party libraries</b>
   <ol>
@@ -25,4 +26,4 @@ Coding architecture/ Design Pattern:
 <li>MVVM (Model View ViewModel)</li>
 </ol>
   
-Still testing the code. Stay tune for update!
+The project is complete. Just download it and run it. 
