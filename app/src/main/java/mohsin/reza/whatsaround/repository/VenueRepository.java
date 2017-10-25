@@ -36,8 +36,8 @@ public class VenueRepository {
     private final VenueDao venueDao;
     private final AppExecutors appExecutors;
     private final FoursquareService foursquareService;
-    private String Cliend_ID="Z4RIEWX32VLZ0XTRVQ33RXYF051NRPXINPFPGF5YT13LVH43",
-            Cliend_secret="C1KWEAT2HIIOOPAVP3URADZNINWI4PG4EFP0HWPZVA02MEMM",
+    private String Cliend_ID="YOUR_CLIENT_ID",
+            Cliend_secret="YOUR_SECRET_ID",
             Version="20170801",
             LatLong="-33.870728,151.207746",
             Radius="100000",
@@ -97,7 +97,7 @@ public class VenueRepository {
                         return AbsentLiveData.create();
                     }
                     else {
-                        mvenue_list.setValue(input);//change to mod_list
+                        mvenue_list.setValue(input);
                         return mvenue_list;
                     }
                 });
