@@ -1,5 +1,6 @@
 package mohsin.reza.whatsaround.binding;
 
+import android.graphics.drawable.Drawable;
 import android.support.v4.app.Fragment;
 import android.databinding.BindingAdapter;
 import android.widget.ImageView;
@@ -17,7 +18,6 @@ public class FragmentBindingAdapters {
 
     @Inject
     public FragmentBindingAdapters(Fragment fragment){ this.fragment=fragment;}
-
     @BindingAdapter("imageUrl")
     public void bindImage(ImageView imageView, String url)
     {

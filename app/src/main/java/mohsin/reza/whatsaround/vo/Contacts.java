@@ -11,15 +11,11 @@ public class Contacts {
     public final String phone;
     @SerializedName("formattedPhone")
     public final String formattedPhone;
-    @SerializedName("twitter")
-    public final String twitter;
 
-    public Contacts(String phone, String formattedPhone, String twitter)
+    public Contacts(String phone, String formattedPhone)
     {
         this.phone=phone;
         this.formattedPhone=formattedPhone;
-        this.twitter=twitter;
-
     }
 
 }

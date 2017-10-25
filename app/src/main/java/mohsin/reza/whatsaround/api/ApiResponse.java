@@ -3,6 +3,7 @@ package mohsin.reza.whatsaround.api;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.util.ArrayMap;
+import android.util.Log;
 
 import java.io.IOException;
 import java.util.Collections;
@@ -56,8 +57,10 @@ public class ApiResponse<T> {
             }
             errorMessage = message;
             body = null;
-        }
+            Log.v("ApiResponse", "inside apiresponse "+body);
+        }//end of else
 
+        //
         String linkHeader = response.headers().get("link");
         if (linkHeader == null) {
             links = Collections.emptyMap();
@@ -78,21 +81,5 @@ public class ApiResponse<T> {
         return code >= 200 && code < 300;
     }
 
-    public Integer getNextPage() {
-        String next = links.get(NEXT_LINK);
-        if (next == null) {
-            return null;
-        }
-        Matcher matcher = PAGE_PATTERN.matcher(next);
-        if (!matcher.find() || matcher.groupCount() != 1) {
-            return null;
-        }
-        try {
-            return Integer.parseInt(matcher.group(1));
-        } catch (NumberFormatException ex) {
-            Timber.w("cannot parse next page from %s", next);
-            return null;
-        }
-    }
 
 }

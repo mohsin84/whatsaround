@@ -19,6 +19,7 @@ public class AutoClearedValue<T> {
                 }
             }
         },false);
+        this.value = value;
     }
 
     public T get() {

@@ -24,9 +24,10 @@ public class Location {
     @SerializedName("lng")
     public final double lng;
     @SerializedName("distance")
-    public final double distance;
+    public final Integer distance;
 
-    public Location(String address, String crossStreet, String city, String state, String postalCode, String country, Double lat, Double lng, double distance)
+    public Location(String address, String crossStreet, String city, String state, String postalCode, String country,
+                    Double lat, Double lng, Integer distance)
     {
         this.address=address;
         this.crossStreet=crossStreet;

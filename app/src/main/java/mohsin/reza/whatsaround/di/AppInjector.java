@@ -26,7 +26,7 @@ public class AppInjector {
         whatsAroundApp.registerActivityLifecycleCallbacks(new Application.ActivityLifecycleCallbacks() {
             @Override
             public void onActivityCreated(Activity activity, Bundle bundle) {
-
+                handleActivity(activity);
             }
 
             @Override

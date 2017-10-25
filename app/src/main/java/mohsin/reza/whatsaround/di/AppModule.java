@@ -20,11 +20,10 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 @Module(includes = ViewModelModule.class)
 class AppModule {
-
     @Singleton @Provides
     FoursquareService provideFoursquareService(){
         return new Retrofit.Builder()
-                .baseUrl("https://api.foursquare.com/v2/venues/")
+                .baseUrl("https://api.foursquare.com/v2/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(new LiveDataCallAdapterFactory())
                 .build()
@@ -33,7 +32,7 @@ class AppModule {
 
     @Singleton @Provides
     FoursquarDB providesDB(Application application){
-        return Room.databaseBuilder(application,FoursquarDB.class,"waround.db").build();
+        return Room.databaseBuilder(application,FoursquarDB.class,"waround.db").fallbackToDestructiveMigration().build();
     }
 
     @Singleton @Provides

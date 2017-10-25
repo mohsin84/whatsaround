@@ -1,20 +1,27 @@
 package mohsin.reza.whatsaround.vo;
 
+import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Embedded;
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.ForeignKey;
+import android.arch.persistence.room.Index;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
 
 /**
  * Created by mohsin on 10/4/2017.
  */
 
 public class Categories {
+
     @SerializedName("id")
+    @ColumnInfo(name = "cat_id")
     public final String id;
+
     @SerializedName("name")
-    public final String name;
+    public final String cat_name;
+
     @SerializedName("pluralName")
     public final String pluralName;
     @SerializedName("shortName")
@@ -22,20 +29,13 @@ public class Categories {
     @SerializedName("icon")
     @Embedded
     public final Icon icon;
-    @SerializedName("primary")
-    public final Boolean primary;
-    @SerializedName("categories")
-    public final List<Categories> categories;
 
-    public Categories(String id, String name, String pluralName, String shortName, Icon icon,Boolean primary, List<Categories> categories )
+    public Categories(String id, String cat_name,String pluralName, String shortName, Icon icon)
     {
         this.id=id;
-        this.name=name;
+        this.cat_name=cat_name;
         this.pluralName=pluralName;
         this.shortName=shortName;
         this.icon=icon;
-        this.primary=primary;
-        this.categories=categories;
     }
-
 }

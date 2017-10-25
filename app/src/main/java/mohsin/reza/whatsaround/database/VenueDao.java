@@ -8,6 +8,8 @@ import android.arch.persistence.room.Query;
 
 import java.util.List;
 
+import mohsin.reza.whatsaround.vo.Categories;
+import mohsin.reza.whatsaround.vo.FoursquareItems;
 import mohsin.reza.whatsaround.vo.Venue;
 
 /**
@@ -19,7 +21,7 @@ public abstract class VenueDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     public abstract void insertVenuelist(List<Venue> venueList);
 
-    @Query("Select * from Venue") //check whether an order by is required
+    @Query("Select * from Venue order by distance") //check whether an order by is required
     public abstract LiveData<List<Venue>> loadVenueList();
 
 }

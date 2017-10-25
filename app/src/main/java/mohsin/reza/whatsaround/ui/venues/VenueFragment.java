@@ -1,6 +1,7 @@
 package mohsin.reza.whatsaround.ui.venues;
 
 import android.arch.lifecycle.LifecycleFragment;
+import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProvider;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
@@ -10,12 +11,16 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
+
+import java.util.Collections;
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -26,6 +31,9 @@ import mohsin.reza.whatsaround.di.Injectable;
 import mohsin.reza.whatsaround.ui.common.NavigationController;
 import mohsin.reza.whatsaround.ui.common.VenueListAdapter;
 import mohsin.reza.whatsaround.util.AutoClearedValue;
+import mohsin.reza.whatsaround.vo.FoursquareItems;
+import mohsin.reza.whatsaround.vo.Resource;
+import mohsin.reza.whatsaround.vo.Venue;
 
 /**
  * Created by mohsin on 10/4/2017.
@@ -40,14 +48,15 @@ public class VenueFragment extends LifecycleFragment implements Injectable {
     NavigationController navigationController;
 
     DataBindingComponent dataBindingComponent = new FragmentDataBindingComponent(this);
-
     AutoClearedValue<VenueFragmentBinding> binding;
+    AutoClearedValue<VenueListAdapter> adapter;
     private VenueViewModel venueViewModel;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater layoutInflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState){
-        VenueFragmentBinding dataBinding= DataBindingUtil.inflate(layoutInflater, R.layout.venue_fragment,container,
+        VenueFragmentBinding dataBinding= DataBindingUtil
+                .inflate(layoutInflater, R.layout.venue_fragment,container,
                 false,dataBindingComponent);
         binding=new AutoClearedValue<>(this,dataBinding);
         return dataBinding.getRoot();
@@ -57,42 +66,26 @@ public class VenueFragment extends LifecycleFragment implements Injectable {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         venueViewModel= ViewModelProviders.of(this,viewModelFactory).get(VenueViewModel.class);
+
+        VenueListAdapter venueListAdapter=new VenueListAdapter(dataBindingComponent,
+                new VenueListAdapter.VenueClickCallBack() {
+                    @Override
+                    public void onClick(Venue myvenue) {
+                        navigationController.navigateToVenueDetails(myvenue);
+                    }
+                });//instantiate adapter here
+        binding.get().venueList.setAdapter(venueListAdapter); //bind adapter
+        adapter=new AutoClearedValue<>(this,venueListAdapter);//set auto clear value for this adapter
+
         initRecyclerView();
-        //instantiate adapter here
-        //bind adapter
-        //set auto clear value for this adapter
-
-
-    }
-
-    private void initSearchInputListener(View view) {
-        binding.get().input.setOnEditorActionListener((v, actionId, event) -> {
-            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
-                doSearch(v);
-                return true;
-            }
-            return false;
-        });
-        binding.get().input.setOnKeyListener((v, keyCode, event) -> {
-            if ((event.getAction() == KeyEvent.ACTION_DOWN)
-                    && (keyCode == KeyEvent.KEYCODE_ENTER)) {
-                doSearch(v);
-                return true;
-            }
-            return false;
-        });
-    }
-
-    private void doSearch(View v) {
-        String query = binding.get().input.getText().toString();
-        // Dismiss keyboard
-        dismissKeyboard(v.getWindowToken());
-        binding.get().setOffset(query);
-        //searchViewModel.setQuery(query);
     }
 
     private void initRecyclerView() {
-
+        venueViewModel.getresult_venueList().observe(this, listResource -> {
+            binding.get().setSearchResource(listResource);
+            adapter.get().replace(listResource==null?null:listResource.data);
+            binding.get().executePendingBindings();
+        });
     }
 
 
