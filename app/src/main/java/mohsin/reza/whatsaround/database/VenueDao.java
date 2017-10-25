@@ -21,7 +21,7 @@ public abstract class VenueDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     public abstract void insertVenuelist(List<Venue> venueList);
 
-    @Query("Select * from Venue order by distance") //check whether an order by is required
+    @Query("Select * from Venue order by distance") 
     public abstract LiveData<List<Venue>> loadVenueList();
 
 }
