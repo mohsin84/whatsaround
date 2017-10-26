@@ -12,14 +12,14 @@ This sample use Foursquare's Location(Venue) API to show the recommeded place ar
 <b>android libraries</b>
 <ol>
 <li>Android Architecture Components</li>
-<li> Dagger 2<li>  
+<li> Dagger 2</li>  
 <li>Android Data Binding</li>
 <li>Android Support Library</li>
 </ol>
 <b>3rd Party libraries</b>
   <ol>
 <li>Retrofit</li>
-<li>Picasso </li>
+<li>Glide</li>
 </ol>
 Coding architecture/ Design Pattern:
  <ol>
