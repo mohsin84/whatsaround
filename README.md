@@ -11,15 +11,16 @@ This sample use Foursquare's Location(Venue) API to show the recommeded place ar
 
 <b>android libraries</b>
 <ol>
-<li>Android Architecture Components</li>
-<li> Dagger 2</li>  
-<li>Android Data Binding</li>
+<li><a href="https://developer.android.com/topic/libraries/architecture/index.html">Android Architecture Components</a></li>
+  <li> <a href="https://google.github.io/dagger/">Dagger 2 </a></li>  
+<li><a href="https://developer.android.com/topic/libraries/data-binding/index.html">Android Data Binding</a></li>
 <li>Android Support Library</li>
 </ol>
+
 <b>3rd Party libraries</b>
   <ol>
-<li>Retrofit</li>
-<li>Glide</li>
+  <li><a href="http://square.github.io/retrofit/"> Retrofit</a></li>
+<li> <a> href="http://bumptech.github.io/glide/" Glide </a></li>
 </ol>
 Coding architecture/ Design Pattern:
  <ol>
