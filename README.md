@@ -1,7 +1,7 @@
 # whatsaround
 An android architecture component example along with Dagger, Retrofit
 
-This sample use Foursquare's Location(Venue) API to show the recommeded place around you. The app shows trending venues/places of user current location. Instead of RxJava’s Flowables, Maybe or Any used LiveData, MutableLiveData and MediatorLiveData. It’s a complete MVVM project that use dependency injection and lifecycle aware components. It use android architecture component library features like-
+This sample use Foursquare's Location(Venue) API to show the recommeded place around you. The app shows trending venues/places of user current location. Instead of RxJava’s Flowables, Maybe or Any used LiveData, MutableLiveData and MediatorLiveData. It’s a complete MVVM project that use dependency injection and lifecycle aware components. It use all features of <a href="https://developer.android.com/topic/libraries/architecture/index.html">Android Architecture Components</a> library like-
 <ol>
 <li> Room</li>
 <li> Lifecycle-aware components</li>
@@ -20,7 +20,7 @@ This sample use Foursquare's Location(Venue) API to show the recommeded place ar
 <b>3rd Party libraries</b>
   <ol>
   <li><a href="http://square.github.io/retrofit/"> Retrofit</a></li>
-<li> <ahref="http://bumptech.github.io/glide/" Glide </a></li>
+<li> <a href="http://bumptech.github.io/glide/"> Glide </a></li>
 </ol>
 Coding architecture/ Design Pattern:
  <ol>
