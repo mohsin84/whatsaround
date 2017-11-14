@@ -14,17 +14,17 @@ This sample use Foursquare's Location(Venue) API to show the recommeded place ar
 <li><a href="https://developer.android.com/topic/libraries/architecture/index.html">Android Architecture Components</a></li>
   <li> <a href="https://google.github.io/dagger/">Dagger 2 </a></li>  
 <li><a href="https://developer.android.com/topic/libraries/data-binding/index.html">Android Data Binding</a></li>
-<li>Android Support Library</li>
+<li> <a href="https://developer.android.com/topic/libraries/support-library/index.html">Android Support Library</a></li>
 </ol>
 
 <b>3rd Party libraries</b>
   <ol>
   <li><a href="http://square.github.io/retrofit/"> Retrofit</a></li>
-<li> <a> href="http://bumptech.github.io/glide/" Glide </a></li>
+<li> <ahref="http://bumptech.github.io/glide/" Glide </a></li>
 </ol>
 Coding architecture/ Design Pattern:
  <ol>
-<li>MVVM (Model View ViewModel)</li>
+<li> <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel">MVVM (Model View ViewModel)</a></li>
 </ol>
   
 The project is complete. Just download it and run it after changing Client_ID and Client_secret ids with your ids. Go to <a href="https://developer.foursquare.com/docs/api/getting-started">foursquare developer page</a> to generate your id. 
